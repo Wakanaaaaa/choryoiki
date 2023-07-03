@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+
+
+body {
+    font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.experiment-description{
+    overflow-wrap: normal;
+}
+
+/*
+section
+*/
+.section {
+    padding: 30px, 15px;
+}
+
+.section.section-secoundly {
+    padding: 0;
+    background: #efefef;
+    max-width: flex;
+}
+
+.section-headline {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 0 40px;
+
+}
+
+
+/*
+header
+*/
+
+
+
+/*
+about
+*/
+.about {
+    margin: 0px;
+    display: flex;
+
+}
+
+/* .about-image */
+.about-caption {
+    padding-left: 15px;
+}
+
+.about-headline {
+    margin: 0 0 20px;
+    font-size: 30px;
+
+}
+@media screen and (max-width: 768px) {
+    .about {
+        display: block;
+    }
+    .about-image{
+        max-width: 100%;
+    }
+    .about-headline{
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/* .about-description */
+
+/*
+member
+*/
+.grid {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item {
+    list-style: none;
+}
+
+.grid-col-2>.grid-item {
+    width: 50%;
+}
+
+.member {
+    text-align: center;
+}
+
+.member-name {
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .grid {
+        display: block;
+    }
+
+    .grid-col-2>.grid-item {
+        width: 100%;
+        margin: 20px;
+    }
+}
