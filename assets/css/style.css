@@ -12,7 +12,7 @@
     .container {
         position: relative;
         width: 100vw;
-        height: 100vh;
+        height: auto;
         overflow: hidden;
     }
 
@@ -25,16 +25,53 @@
     align-items: center;
     justify-content: center;
 }
+
 @media screen and (max-width: 768px) {
-.image-wrapper {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .image-wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
+.container .image-wrapper h1 {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 65px;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+    text-shadow:2px 0 5px black;
+
+}
+
+@media screen and (max-width: 768px) {
+    .container .image-wrapper h1 {
+        position: absolute;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        top: 60%;
+        left: 50%;
+        text-shadow:2px 0 5px black;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+.container img {
+    width: 100%;
+    /* color: rgba(255, 255, 255, 0.6); */
+}
+
+/* 
 .image {
     display: block;
     width: 100%;
@@ -47,18 +84,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%, -50%);
     font-size: 7vw;
     color: white;
     text-align: center;
     white-space: nowrap;
+    margin:0;
+    padding:0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
 }
 @media screen and (max-width: 768px) {
 .text {
     position: absolute;
-    /* top: 40%;
-    left: 50%; */
     transform: translate(-50%, -50%);
     font-size: 5vw;
     color: white;
@@ -66,7 +105,7 @@
     white-space: nowrap;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
 }
-}
+} */
 
 /* .header {
     padding: 30px 4% 10px;
@@ -130,24 +169,26 @@ h1 {
     max-width: 100%;
     overflow-x: hidden;
     border-bottom: 1.5px solid #333;
-  }
-  
-  .header-nav {
+}
+
+.header-nav {
     margin: 0 auto;
-  }
-  
-  .header-navlist {
+}
+
+.header-navlist {
     list-style: none;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* 追加 */
-  }
-  
-  .header-navitem {
-    flex: 0 0 auto; /* 追加 */
-  }
-  
-  .header-navitem > a {
+    flex-wrap: wrap;
+    /* 追加 */
+}
+
+.header-navitem {
+    flex: 0 0 auto;
+    /* 追加 */
+}
+
+.header-navitem>a {
     margin: 0 0 0 15px;
     font-size: 14px;
     display: block;
@@ -157,31 +198,31 @@ h1 {
     font-weight: bold;
     border-bottom: 2px solid transparent;
     transition: border-color .25s;
-  }
+}
 
-  .header-navitem > a:hover {
+.header-navitem>a:hover {
     border-bottom: 2px solid #333;
 }
-  
-  .header-navitem:first-child {
-    margin-left: 0;
-  }
 
-  @media (max-width: 768px) {
+.header-navitem:first-child {
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
     .header {
-      padding: 15px 4% 5px;
+        padding: 15px 4% 5px;
     }
-    
-    .header-navitem > a {
-      font-size: 12px;
-      padding: 5px;
+
+    .header-navitem>a {
+        font-size: 12px;
+        padding: 5px;
     }
-    
+
     .background-image {
-      display: none;
+        display: none;
     }
-  }
-  
+}
+
 
 body {
     font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
@@ -282,7 +323,7 @@ member
 }
 
 .grid-col-3>.grid-item {
-    width:33.3%
+    width: 33.3%
 }
 
 .member {
@@ -301,6 +342,6 @@ member
 
     .grid-col-2>.grid-item {
         width: 100%;
-        margin: 20px;
+        /* margin: 20px; */
     }
 }
