@@ -1,5 +1,89 @@
 @charset "utf-8";
 
+.container {
+    padding-top: 100px;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5vw;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+header {
+    padding: 30px 4% 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #4b4b4b;
+}
+
+.header-navlist {
+    list-style: none;
+    margin: 0;
+    display: flex;
+}
+
+.header-navitem {
+    margin: 0 0 0 15px;
+    font-size: 14px;
+}
+
+.header-navitem:first-child {
+    margin-left: 0;
+}
+
+.header-nav {
+    margin: 0 0 0 auto;
+}
 
 
 body {
@@ -9,7 +93,7 @@ body {
     color: #333;
 }
 
-.experiment-description{
+.experiment-description {
     overflow-wrap: normal;
 }
 
@@ -60,14 +144,17 @@ about
     font-size: 30px;
 
 }
+
 @media screen and (max-width: 768px) {
     .about {
         display: block;
     }
-    .about-image{
+
+    .about-image {
         max-width: 100%;
     }
-    .about-headline{
+
+    .about-headline {
         margin-bottom: 20px;
         font-size: 20px;
         text-align: center;
@@ -93,6 +180,10 @@ member
 
 .grid-col-2>.grid-item {
     width: 50%;
+}
+
+.grid-col-3>.grid-item {
+    width:33.3%
 }
 
 .member {
