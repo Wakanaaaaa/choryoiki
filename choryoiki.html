@@ -96,6 +96,8 @@
                     学年、性別を目的変数、アンケートの回答の数値を説明変数とし、クラスタリング(K-Means法)を行う。
                     その後、学年や性別ごとに相関があるかどうかを分析する。質問内容は日常生活において経験したことがある事象について以下のような複数の質問を用意し、
                     口頭で尋ね、数直線を用意し、あてはまる数値を記入してもらう。 <br>
+                    アンケートは以下のような画像を制作し、実施した。<br>
+                    <img src="assets/images/research.jpg" width=350px alt="research">
 
                 </p>
                 <h2 class="experiment-headline">引数とグラフのラベルの関係、質問内容</h2>
@@ -123,8 +125,8 @@
                     また、企画書の内容を口頭でアンケートを取るという行為も記号論的に解釈できるという点では、そのエッセンスが入っていると考えられる。このアンケートではあらかじめ生活する中で一度は経験したことがあるだろう事象を題材にしている。
                     <br>
                     その質問の内容は、広く認知された名称が決まっていることではないが、各々の経験として知覚され共通認識でどのような状況であるかということがアンケート回答者の脳内で想像できるだろう。 <br>
-                    このような自身の内部パラメータを更新し、内的表象を組織化させ、「認知的な閉じ」を無意識的に体験してもらう、またはアンケート実施者の視点から観察することができる。
-                    <br><br>
+                    このような自身の内部パラメータを更新し、内的表象を組織化させ、「認知的な閉じ」を無意識的に体験してもらう、またはアンケート実施者の視点から観察することができる。<br>
+
                 </p>
             </figcaption>
         </figure>
@@ -167,7 +169,44 @@
             図２から、グラフの右上には分布がないことがわかる。このことから、食事を男性が多く払うべきだと思う人は、未成年飲酒を進めない傾向にあることがわかる。<br>
 
             図3から、グラフの右上には分布していないことがわかる。このことから、自動車の運転時に法定速度を大幅に超えて速度を出す人で、食事の際に、他人に自分の食事を待ってほしいと思う人はあまりいないことがわかる。<br>
-        <br>
+            <br>
+<!-- 
+            また、実行時のコードは以下のようになっている。
+        <pre>
+            <code>
+                import pandas as pd
+                import numpy as np
+                import matplotlib.pyplot as plt
+                from sklearn.cluster import KMeans
+                %matplotlib inline
+
+
+                df1 = pd.read_csv('Book1.csv')
+                print(df1.head())
+
+                km = KMeans(n_clusters=4)
+                X = df1[['未成年飲酒', '優先座席']]
+                km.fit(X)
+                pred=km.labels_
+
+                x0=X[pred==0]
+                x1=X[pred==1]
+                x2=X[pred==2]
+                x3=X[pred==3]
+                x4=X[pred==4]
+                plt.scatter(x1['未成年飲酒'], x1['優先座席'], c='blue', marker='o', label='cluster1')
+                plt.scatter(x0['未成年飲酒'], x0['優先座席'], c='red', marker='o', label='cluster0')
+                plt.scatter(x2['未成年飲酒'], x2['優先座席'], c='yellow', marker='o', label='cluster2')
+                plt.scatter(x3['未成年飲酒'], x3['優先座席'], c='green', marker='o', label='cluster3')
+
+
+                plt.xlabel('child_drink')
+                plt.ylabel('seat')
+                plt.legend(loc=5)
+                plt.show()
+
+            </code>
+        </pre> -->
         </p>
 
         </figcaption>
